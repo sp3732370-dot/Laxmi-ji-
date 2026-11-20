@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SkinExpert Hub shares simple skincare routines, beauty tips and practical guidance for healthy-looking skin.">
+  <meta name="theme-color" content="#092b4c">
+  <title>SkinExpert Hub | Your Beauty & Skincare Partner</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--navy:#092b4c;--navy2:#123d61;--gold:#d5ad58;--cream:#fbf8f1;--ink:#1d2a35;--muted:#687783;--white:#fff}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:"DM Sans",sans-serif;color:var(--ink);background:#fff;line-height:1.65}
+    a{color:inherit;text-decoration:none}
+    .topline{background:var(--navy);color:#fff;text-align:center;padding:8px 16px;font-size:12px;letter-spacing:1.2px}
+    header{background:#fff;position:sticky;top:0;z-index:20;box-shadow:0 3px 18px #0b294010}
+    .navwrap{max-width:1180px;margin:auto;padding:15px 24px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+    .brand{display:flex;align-items:center;gap:11px;color:var(--navy)}
+    .brandmark{width:43px;height:43px;border:1.5px solid var(--gold);border-radius:50%;display:grid;place-items:center;font-family:"Playfair Display",serif;font-size:21px;color:var(--gold)}
+    .brandname{font-family:"Playfair Display",serif;font-weight:700;font-size:21px;line-height:1.1}
+    .brandtag{font-size:9px;letter-spacing:2px;color:#8b7446;text-transform:uppercase;margin-top:4px}
+    nav{display:flex;align-items:center;gap:27px;font-size:13px;font-weight:600;color:#34495a}
+    nav a:hover{color:#b48a38}
+    .nav-cta,.btn{display:inline-block;background:var(--gold);color:var(--navy);padding:12px 21px;border-radius:3px;font-size:12px;font-weight:700;letter-spacing:.7px;transition:.2s}
+    .nav-cta:hover,.btn:hover{background:#e5c77f;transform:translateY(-2px)}
+    .menu{display:none;background:none;border:0;color:var(--navy);font-size:27px;cursor:pointer}
+    .hero{background:var(--cream);min-height:590px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:45px;padding:65px max(6vw,24px)}
+    .hero-copy{max-width:570px;justify-self:end}
+    .eyebrow{color:#a17a31;text-transform:uppercase;letter-spacing:2.5px;font-size:11px;font-weight:700;margin-bottom:18px}
+    h1,h2,h3{font-family:"Playfair Display",serif}
+    h1{font-size:clamp(42px,5vw,66px);line-height:1.12;color:var(--navy);font-weight:600;margin-bottom:20px}
+    .hero-copy p{color:#64727c;max-width:480px;margin-bottom:28px;font-size:15px}
+    .hero-image{height:460px;width:100%;max-width:560px;justify-self:start;object-fit:cover;border-radius:48% 48% 5px 5px;box-shadow:18px 18px 0 #d9c18c}
+    .section{padding:86px 24px}
+    .container{max-width:1120px;margin:auto}
+    .section-head{text-align:center;max-width:650px;margin:0 auto 42px}
+    .section-head h2{font-size:clamp(30px,4vw,42px);color:var(--navy);line-height:1.2;margin-bottom:12px}
+    .section-head p{color:var(--muted);font-size:14px}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
+    .about-img{width:100%;height:410px;object-fit:cover;border-radius:4px}
+    .about-copy h2{font-size:40px;color:var(--navy);line-height:1.2;margin-bottom:18px}
+    .about-copy p{color:var(--muted);font-size:14px;margin-bottom:16px}
+    .services{background:var(--cream)}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .service-card{background:#fff;padding:0 0 25px;box-shadow:0 8px 30px #142e430b}
+    .service-card img{width:100%;height:220px;object-fit:cover}
+    .service-card div{padding:20px 22px 0}
+    .service-card h3{color:var(--navy);font-size:23px;margin-bottom:8px}
+    .service-card p{color:var(--muted);font-size:13px}
+    .tips-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .tip{border:1px solid #eee8dc;padding:26px;border-radius:4px}
+    .tip .number{color:var(--gold);font-family:"Playfair Display",serif;font-size:28px}
+    .tip h3{color:var(--navy);font-size:21px;margin:8px 0}
+    .tip p{color:var(--muted);font-size:13px}
+    .quote{background:var(--navy);color:#fff;text-align:center;padding:65px 24px}
+    .quote h2{font-size:clamp(27px,4vw,39px);max-width:760px;margin:0 auto 13px}
+    .quote p{color:#d9e1e8;font-size:13px;letter-spacing:1px}
+    .contact{background:var(--cream)}
+    .contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:55px}
+    .contact h2{font-size:38px;color:var(--navy);margin-bottom:14px}
+    .contact p{color:var(--muted);font-size:14px;margin-bottom:12px}
+    form{display:grid;gap:13px}
+    input,textarea{width:100%;padding:14px 15px;border:1px solid #e4dfd5;background:#fff;font:inherit;font-size:13px;outline:none}
+    input:focus,textarea:focus{border-color:var(--gold)}
+    textarea{min-height:125px;resize:vertical}
+    form button{border:0;cursor:pointer;justify-self:start}
+    #formMessage{font-size:13px;color:var(--navy);margin-top:5px}
+    footer{background:#061e35;color:#e9eef2;padding:35px 24px;text-align:center}
+    footer .brand{justify-content:center;color:#fff;margin-bottom:12px}
+    footer p{font-size:12px;color:#bdc8d1}
+    @media(max-width:850px){nav{gap:15px}.nav-cta{display:none}.hero{gap:25px}.cards,.tips-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:650px){
+      .navwrap{padding:12px 18px}.menu{display:block}
+      nav{display:none;position:absolute;left:0;right:0;top:70px;background:#fff;padding:20px 24px 25px;flex-direction:column;align-items:flex-start;box-shadow:0 12px 18px #102a4015}
+      nav.open{display:flex}
+      .hero{grid-template-columns:1fr;padding:52px 22px 55px;gap:32px}
+      .hero-copy{justify-self:start}.hero-image{height:330px;justify-self:center;max-width:430px}
+      .section{padding:65px 20px}.about-grid,.contact-grid{grid-template-columns:1fr;gap:30px}
+      .about-img{height:300px}.about-copy h2{font-size:33px}
+      .cards,.tips-grid{grid-template-columns:1fr}
+      .service-card img{height:235px}
+    }
+  </style>
+</head>
+<body>
+  <div class="topline">A LITTLE CARE FOR YOUR SKIN, A LOT OF CONFIDENCE FOR YOU</div>
+  <header>
+    <div class="navwrap">
+      <a class="brand" href="#home" aria-label="SkinExpert Hub home">
+        <span class="brandmark">SH</span>
+        <span><span class="brandname">SkinExpert Hub</span><span class="brandtag">Your Beauty &amp; Skincare Partner</span></span>
+      </a>
+      <button class="menu" id="menuBtn" aria-label="Open navigation" aria-expanded="false">☰</button>
+      <nav id="mainNav">
+        <a href="#home">HOME</a><a href="#about">ABOUT</a><a href="#services">SKINCARE</a><a href="#tips">BEAUTY TIPS</a><a href="#contact">CONTACT</a>
+      </nav>
+      <a class="nav-cta" href="#contact">GET IN TOUCH</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow">Welcome to SkinExpert Hub</div>
+        <h1>Healthy Skin.<br><span style="color:#bd9448">Everyday Confidence.</span></h1>
+        <p>Discover simple skincare routines, thoughtful beauty tips and easy-to-understand guidance to help you care for your skin with confidence.</p>
+        <a class="btn" href="#services">EXPLORE SKINCARE</a>
+      </div>
+      <img class="hero-image" src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=1100&q=85" alt="A calm skincare and self-care moment">
+    </section>
+
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <img class="about-img" src="https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?auto=format&fit=crop&w=1000&q=85" alt="Skincare products arranged for a daily routine" loading="lazy">
+        <div class="about-copy">
+          <div class="eyebrow">A little about us</div>
+          <h2>Your journey to better skin care starts here.</h2>
+          <p>SkinExpert Hub is a beauty and skincare information space created to make everyday skin care feel simpler. Explore helpful basics, routine ideas and beauty inspiration in one place.</p>
+          <p>Every skin type is different. Learn about your skin, introduce products thoughtfully and choose a routine that feels comfortable for you.</p>
+          <a class="btn" href="#tips">READ OUR TIPS</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section services" id="services">
+      <div class="container">
+        <div class="section-head"><div class="eyebrow">Explore our topics</div><h2>Care that starts with understanding</h2><p>Browse our featured skincare and beauty topics and build your knowledge one step at a time.</p></div>
+        <div class="cards">
+          <article class="service-card"><img src="https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?auto=format&fit=crop&w=850&q=80" alt="Skincare cleanser and face care products" loading="lazy"><div><h3>Daily Skin Care</h3><p>Learn the basics of cleansing, moisturising and sun protection for a simple daily routine.</p></div></article>
+          <article class="service-card"><img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=850&q=80" alt="Relaxing facial skincare treatment" loading="lazy"><div><h3>Skin Type Guides</h3><p>Understand common skin types and explore gentle routine ideas that suit your needs.</p></div></article>
+          <article class="service-card"><img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=850&q=80" alt="Beauty and makeup products" loading="lazy"><div><h3>Beauty &amp; Makeup</h3><p>Find approachable beauty inspiration, makeup basics and tips for a fresh everyday look.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="tips">
+      <div class="container">
+        <div class="section-head"><div class="eyebrow">The essentials</div><h2>Simple habits, thoughtful care</h2><p>A few useful reminders to keep your skincare routine practical and consistent.</p></div>
+        <div class="tips-grid">
+          <article class="tip"><div class="number">01</div><h3>Keep it simple</h3><p>Start with a gentle cleanser, a moisturiser that suits your skin and broad-spectrum sunscreen during the day.</p></article>
+          <article class="tip"><div class="number">02</div><h3>Introduce slowly</h3><p>Try new skincare products one at a time and follow the product directions. Stop using anything that causes irritation.</p></article>
+          <article class="tip"><div class="number">03</div><h3>Be consistent</h3><p>Give a basic routine time and remember that healthy-looking skin is about care, not perfection.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="quote"><h2>“Let your skincare routine be a moment of care, not a race for perfection.”</h2><p>SKINEXPERT HUB · YOUR BEAUTY &amp; SKINCARE PARTNER</p></section>
+
+    <section class="section contact" id="contact">
+      <div class="container contact-grid">
+        <div><div class="eyebrow">Say hello</div><h2>Let's connect</h2><p>Have a question, suggestion or topic you would like us to cover? Send a message using the form.</p><p><strong>SkinExpert Hub</strong><br>Your Beauty &amp; Skincare Partner</p></div>
+        <form id="contactForm">
+          <input type="text" name="name" placeholder="Your name" aria-label="Your name" required>
+          <input type="email" name="email" placeholder="Your email address" aria-label="Your email address" required>
+          <textarea name="message" placeholder="Write your message..." aria-label="Your message" required></textarea>
+          <button class="btn" type="submit">SEND MESSAGE</button>
+          <p id="formMessage" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="brand"><span class="brandmark">SH</span><span><span class="brandname">SkinExpert Hub</span><span class="brandtag" style="color:#d5ad58">Your Beauty &amp; Skincare Partner</span></span></div>
+    <p>© <span id="year"></span> SkinExpert Hub. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const nav = document.getElementById('mainNav');
+    menuBtn.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(isOpen));
+      menuBtn.textContent = isOpen ? '×' : '☰';
+    });
+    nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      nav.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      menuBtn.textContent = '☰';
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('contactForm').addEventListener('submit', event => {
+      event.preventDefault();
+      document.getElementById('formMessage').textContent = 'Thank you! This demo form is ready to connect to your email service.';
+      event.target.reset();
+    });
+  </script>
+</body>
+</html>
+
